@@ -144,13 +144,13 @@ boolean resultado=false;
 	}
 	public  void comprar(MySQL mySQL, Compra compra) throws SQLException {
 		if(existe(mySQL,compra.getproducto())){
-			int suma =cantidad(mySQL,compra.getproducto())+compra.get.cantidad();
+			int suma =cantidad(mySQL,compra.getproducto())+compra.getpcantidad();
 			mySQL.abrir();
 			String query = ("UPDATE producto SET cantidad='"+suma+"' WHERE codproducto='" +compra.getproducto()+ "' ");
 			mySQL.insertar(query);
 			int nroFactura=obtenerultimacompra(mySQL)+1;
 		System.out.println(nroFactura);
-			String query1 = ("INSERT INTO compra(codcompra,codproducto,cantidad,fecha,precioventa) VALUES('"+nroFactura+"','"+compra.getproducto()+"','"+compra.getcantidad()+"','"+compra.fecha()+"','"+compra.getprecio()+"')");
+			String query1 = ("INSERT INTO compra(codcompra,codproducto,cantidad,fecha,precioventa) VALUES('"+nroFactura+"','"+compra.getproducto()+"','"+compra.getpcantidad()+"','"+compra.fecha()+"','"+compra.getprecio()+"')");
 			mySQL.insertar(query1);	
 		}
 	}

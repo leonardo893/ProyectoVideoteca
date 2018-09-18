@@ -1,14 +1,11 @@
 package tiendaVideos;
 import java.sql.SQLException;
-
 public class Compra {
 	int codproducto;
 	int cantidad;
 	int precio;
-	String fecha;
-	// nos falta crear la clase consultas para que nos deje de aparecer el error  mostrado en el codigo 
-    consultas consulta = new consultas();
-	
+	String fecha; 
+    Consultas consulta = new Consultas();
 	public Compra(int codproducto,int cantidad,int precio,String fecha){
         this.codproducto=codproducto;
         this.cantidad=cantidad;
@@ -28,8 +25,6 @@ public class Compra {
 		return fecha;
 	}
 	public void comprar(MySQL mySQL, Compra compra) throws SQLException {
-	// nos falta crear la clase consultas para que nos deje de aparecer el error  mostrado en el codigo
 		consulta.comprar(mySQL,compra);	
 	}
 }
-

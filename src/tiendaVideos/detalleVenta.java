@@ -1,18 +1,14 @@
 package tiendaVideos;
-
 import java.sql.SQLException;
-
 public class detalleVenta {
-
     int codventa;
     int codproducto;
     int cantidad;
-consultas consulta=new consultas();
+Consultas consulta=new Consultas();
 public detalleVenta(int codventa, int codproducto,int cantidad){
 	this.codventa=codventa;
 	this.codproducto=codproducto;
 	this.cantidad=cantidad;
-	
 }
 public void realizarDetalleVenta(MySQL mySQL,detalleVenta detalle) throws SQLException{
 consulta.guardarDetalle(mySQL,detalle);	
@@ -28,4 +24,3 @@ public int getcantidad(){
 	return cantidad;
 }
 }
-
